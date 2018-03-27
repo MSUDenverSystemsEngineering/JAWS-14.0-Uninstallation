@@ -185,7 +185,7 @@ Try {
 
 			## Uninstall FSReader
 			If (Test-Path -Path "$envProgramFiles\Freedom Scientific\FSReader\2.0" -PathType Container) {
-				$exitCode = Execute-Process -Path "$envProgramFiles\Freedom Scientific\FSReader\2.0\UninstallFSReader.exe" -Parameters "/Type SilentRemoveShared" -WindowStyle "Hidden" -WaitForMsiExec -PassThru
+				$exitCode = Execute-Process -Path "$envProgramFiles\Freedom Scientific\FSReader\2.0\UninstallFSReader.exe" -Parameters "/Type silentRemoveShared" -WindowStyle "Hidden" -WaitForMsiExec -PassThru
 				If (($exitCode.ExitCode -ne "0") -and ($mainExitCode -ne "3010")) { $mainExitCode = $exitCode.ExitCode }
 			}
 			If (Get-InstalledApplication -Name "Sentinel System Driver Installer") {
